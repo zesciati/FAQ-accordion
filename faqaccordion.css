@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@1,257&family=Overpass:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -7,17 +9,91 @@ html {
   margin: 0;
 }
 
+:root{
+  /* color */
+  --White: hsl(0, 100%, 100%);
+  --Purple-100: hsl(275, 100%, 97%);
+  --Purple-600: hsl(292, 16%, 49%);
+  --Purple-950: hsl(292, 42%, 14%);
+
+  /* font size title-faq 30px-50px*/
+  --step-1: clamp(2.1094rem, 1.6901rem + 1.7887vw, 3.3rem);
+
+  /* font-weight */
+  --titlefaq: 700;
+  --detailbold:600;
+
+  /* spacing */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+
+  /* border radius */
+
+}
+
+body::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--Purple-600);
+    position:fixed;
+    top: 0;
+    left: 0;  
+    z-index:-1;
+  }
+
 body{
-  /* background-color: black; */
+  font-family: "Work Sans", sans-serif;
 }
 .flex-container{
 	min-height:100vh; 
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  /* background-color: azure; */
+  margin: var(--space-2xs);
+
 }
-.a{
+.flex-layout{
+  background-color: var(--White);
+  padding: var(--space-m);
+  border-radius: 9px;
+}
+/* TITLE for FAQ */
+.title-faq{
+  /* buat konten sejajar (img dengan h1) */
   display: flex;
-  
+}
+.title-faq h1{
+  /* display: inline; */
+  /* width: fit-content; */
+  font-size: var(--step-1);
+  font-weight: var(--titlefaq);
+  margin-left: 1rem;
+}
+
+/* details toggle info */
+
+section{
+  padding-top: 1rem;
+}
+.details--div{
+  /* for horizontal line */
+  margin-bottom: 1rem;
+}
+.details--div summary{
+  font-weight: var(--detailbold);
+  color: var(--Purple-950);
+}
+.details--div p{
+  padding-top: 1rem;
+  color: var(--Purple-600);
+}
+
+/* horizontal line */
+.hr{
+  border-top: var(--Purple-100) solid 2px;
+  padding-bottom: 1rem;
 }
