@@ -20,6 +20,11 @@ html {
   /* font size title-faq 30px-50px*/
   --step-1: clamp(2.1094rem, 1.6901rem + 1.7887vw, 3.3rem);
 
+  /* font size summary 15px-18px */
+  --step-0-summary: clamp(0.9375rem, 0.8562rem + 0.3468vw, 1.125rem);
+  --step-1-summary: clamp(1.125rem, 1.0031rem + 0.5202vw, 1.4063rem);
+  --step-2-summary: clamp(1.35rem, 1.1732rem + 0.7543vw, 1.7578rem);
+
   /* font-weight */
   --titlefaq: 700;
   --detailbold:600;
@@ -55,7 +60,6 @@ body{
 	justify-content: center;
 	align-items: center;
   margin: var(--space-2xs);
-
 }
 .flex-layout{
   background-color: var(--White);
@@ -104,9 +108,10 @@ section{
 .details--div summary{
   font-weight: var(--detailbold);
   color: var(--Purple-950);
-  font-size: 18px;
+  font-size: var(--step-0-summary);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* to make even content (question with icon) */
+  /* width: 22rem; */
 }
 .details--div summary:hover{
   color: var(--Purple-hover);
@@ -114,6 +119,8 @@ section{
 .details--div p{
   padding-top: 1rem;
   color: var(--Purple-600);
+  max-width: 560px;
+  font-size: var(--step-0-summary); 
 }
 
 /* horizontal line */
@@ -123,4 +130,11 @@ section{
 }
 
 
+@media (min-width: 500px) {
 
+  .flex-layout{
+    width: 35rem; /* giving distant between summary content and icon */
+    max-width: 35rem; 
+  }
+
+}
