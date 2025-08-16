@@ -90,10 +90,11 @@ details summary {
   list-style: none;
   &::after {
     content: url(assets/images/icon-plus.svg);
-    
+    transition: 0.4s;
   }
   [open] &::after {
     content: url(assets/images/icon-minus.svg);
+    transform: rotate(90deg);
   }
 }
 details:last-of-type summary::-webkit-details-marker {
@@ -115,7 +116,7 @@ section{
   font-size: var(--step-0-summary);
   display: flex;
   justify-content: space-between; /* to make even content (question with icon) */
-  /* width: 22rem; */
+
 }
 .details--div summary:hover{
   color: var(--Purple-hover);
