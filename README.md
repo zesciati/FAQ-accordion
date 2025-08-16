@@ -1,3 +1,1 @@
-- [x] separuh progress desain android 
-- [ ] gambar star responsif
-- [ ] hr line perbaiki
+- [ ] menambahkan background gambar
