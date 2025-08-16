@@ -15,6 +15,7 @@ html {
   --Purple-100: hsl(275, 100%, 97%);
   --Purple-600: hsl(292, 16%, 49%);
   --Purple-950: hsl(292, 42%, 14%);
+  --Purple-hover: oklch(0.4671 0.2033 313.8);
 
   /* font size title-faq 30px-50px*/
   --step-1: clamp(2.1094rem, 1.6901rem + 1.7887vw, 3.3rem);
@@ -63,7 +64,7 @@ body{
 }
 /* TITLE for FAQ */
 .title-faq{
-  /* buat konten sejajar (img dengan h1) */
+  /* make it even content (img with h1) */
   display: flex;
 }
 .title-faq h1{
@@ -74,8 +75,25 @@ body{
   margin-left: 1rem;
 }
 
-/* details toggle info */
+/* ------------------- Changing icon toggle to the right  ------------------ */
+ /* https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/summary#default_style:~:text=p%3E%0A%3C/details%3E-,Result,-Play */
 
+details summary {
+  list-style: none;
+  &::after {
+    content: url(assets/images/icon-plus.svg);
+    
+  }
+  [open] &::after {
+    content: url(assets/images/icon-minus.svg);
+  }
+}
+details:last-of-type summary::-webkit-details-marker {
+  display: none;
+}
+
+
+/* details toggle info */
 section{
   padding-top: 1rem;
 }
@@ -86,6 +104,12 @@ section{
 .details--div summary{
   font-weight: var(--detailbold);
   color: var(--Purple-950);
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.details--div summary:hover{
+  color: var(--Purple-hover);
 }
 .details--div p{
   padding-top: 1rem;
@@ -97,3 +121,6 @@ section{
   border-top: var(--Purple-100) solid 2px;
   padding-bottom: 1rem;
 }
+
+
+
